@@ -26,8 +26,8 @@ from bindsnet.utils import get_square_assignments, get_square_weights
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--seed", type=int, default=0)
-parser.add_argument("--n_neurons", type=int, default=400)
-parser.add_argument("--batch_size", type=int, default=8)
+parser.add_argument("--n_neurons", type=int, default=6400)
+parser.add_argument("--batch_size", type=int, default=32)
 parser.add_argument("--n_epochs", type=int, default=1)
 parser.add_argument("--n_test", type=int, default=10000)
 parser.add_argument("--n_train", type=int, default=60000)
