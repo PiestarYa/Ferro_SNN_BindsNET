@@ -1,0 +1,29 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+# conda environments:
+#
+MyBrain               *  /HOME/scw6bxd/.conda/envs/MyBrain
+base                     /data/apps/anaconda/2020.11
+jupyter                  /data/apps/anaconda/2020.11/envs/jupyter
+tensorboard              /data/apps/anaconda/2020.11/envs/tensorboard
+
+  File "/HOME/scw6bxd/run/SNN/bindsnet/examples/mnist/my_batch_eth_mnist.py", line 301
+    weights_im.figure.savefig(str(epoch)+"_weight"+str(step)+",jpg"
+TabError: inconsistent use of tabs and spaces in indentation
