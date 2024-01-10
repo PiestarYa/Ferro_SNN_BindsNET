@@ -268,38 +268,38 @@ for epoch in range(n_epochs):
 
         # Optionally plot various simulation information.
         if plot:
-            #image = batch["image"][:, 0].view(28, 28)
-            #inpt = inputs["X"][:, 0].view(time, 784).sum(0).view(28, 28)
-            #lable = batch["label"][0]
+            # image = batch["image"][:, 0].view(28, 28)
+            # inpt = inputs["X"][:, 0].view(time, 784).sum(0).view(28, 28)
+            # lable = batch["label"][0]
             input_exc_weights = network.connections[("X", "Ae")].w
             square_weights = get_square_weights(
                 input_exc_weights.view(784, n_neurons), n_sqrt, 28
             )
             square_assignments = get_square_assignments(assignments, n_sqrt)
-           # spikes_ = {
-           #     layer: spikes[layer].get("s")[:, 0].contiguous() for layer in spikes
-           # }
-           # voltages = {"Ae": exc_voltages, "Ai": inh_voltages}
-           # inpt_axes, inpt_ims = plot_input(
-           #     image, inpt, label=lable, axes=inpt_axes, ims=inpt_ims
-           # )
-           # spike_ims, spike_axes = plot_spikes(spikes_, ims=spike_ims, axes=spike_axes)
+            # spikes_ = {
+            #     layer: spikes[layer].get("s")[:, 0].contiguous() for layer in spikes
+            # }
+            # voltages = {"Ae": exc_voltages, "Ai": inh_voltages}
+            # inpt_axes, inpt_ims = plot_input(
+            #     image, inpt, label=lable, axes=inpt_axes, ims=inpt_ims
+            # )
+            # spike_ims, spike_axes = plot_spikes(spikes_, ims=spike_ims, axes=spike_axes)
             weights_im = plot_weights(square_weights, im=weights_im)
             assigns_im = plot_assignments(square_assignments, im=assigns_im)
-           # perf_ax = plot_performance(
-           #     accuracy, x_scale=update_steps * batch_size, ax=perf_ax
-           # )
-           # voltage_ims, voltage_axes = plot_voltages(
-           #     voltages, ims=voltage_ims, axes=voltage_axes, plot_type="line"
-           # )
+            # perf_ax = plot_performance(
+            #     accuracy, x_scale=update_steps * batch_size, ax=perf_ax
+            # )
+            # voltage_ims, voltage_axes = plot_voltages(
+            #     voltages, ims=voltage_ims, axes=voltage_axes, plot_type="line"
+            # )
 
             plt.pause(1e-8)
 
         network.reset_state_variables()  # Reset state variables.
         pbar_training.update(batch_size)
         if step % update_steps == 0 and step > 0:
-            weights_im.figure.savefig(str(epoch)+"_weight"+str(step)+".jpg")
-            assigns_im.figure.savefig(str(epoch)+"_assigns"+str(step)+".jpg")
+            weights_im.figure.savefig(str(epoch) + "_weight" + str(step) + ".jpg")
+            assigns_im.figure.savefig(str(epoch) + "_assigns" + str(step) + ".jpg")
 
     pbar_training.close()
 
